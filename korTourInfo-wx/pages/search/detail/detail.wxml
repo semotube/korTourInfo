@@ -1,0 +1,95 @@
+<!--pages/search/detail/detail.wxml-->
+<wxs    src="../../../utils/script.wxs" module="script" />
+<import src="../../../wxParse/wxParse.wxml" />
+
+<cu-custom bgColor="bg-green" isBack="{{true}}">
+  <view slot="backText">뒤로</view>
+  <view slot="content">세부정보</view>
+</cu-custom>
+
+<!-- 상단 Tab -->
+<view class="fixed flex bg-gray" style="top:{{CustomBar}}px;">
+<!-- 즐겨찾기버튼 -->
+  <view class="basis-1 flex align-center justify-center" bindtap="bindFavor">
+    <view class="cu-avatar round bg-white text-xxl">
+      <text class="cuIcon-{{isFavor?'favorfill':'favor'}} text-red"></text>
+    </view>
+  </view>
+<!-- tab   -->
+  <view class="basis-9">
+    <scroll-view scroll-x class="nav">
+      <view class="flex text-center">
+        <view class="cu-item flex-sub {{index==TabCur?'text-green cur':''}}" wx:for="{{tabArray}}" wx:key="index" bindtap="tabSelect" data-id="{{index}}">
+          {{tabArray[index].name}}
+        </view>
+      </view>
+    </scroll-view>
+    <view class="cu-tag badge">{{tabArray[2].resArray != ''?tabArray[2].resArray.length:"없음"}}</view>
+  </view>
+</view>
+
+<!-- 공통정보 view -->
+<block wx:if="{{TabCur==0}}">
+
+
+  <view wx:for="{{tabArray[TabCur].resArray}}" wx:key="index">
+    <view class="cu-card dynamic no-card">
+  <!-- 기본정보 조회, 대표이미지 조회   -->
+      <view class="cu-item shadow">
+        <view class="cu-list menu-avatar">
+          <view class="cu-item">
+            <view class="cu-avatar round lg" style="background-image:url({{item.firstimage2}});">
+              <text wx:if="{{!item.firstimage2}}" class="cuIcon-picfill text-gray"></text>
+            </view>
+            <view class="content flex-sub">
+              <view class="text-bold text-cut">{{item.title}}</view>
+              <view class="text-sm text-grey">최종수정일 : {{script.toDate(item.modifiedtime)}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="padding-lr padding-bottom">
+          <view>대 표 명 : {{item.telname}}</view>
+          <view>대표전화 : {{item.tel}}</view>
+          <view>홈페이지 : <template is="wxParse" data="{{wxParseData:homepage.nodes}}"/></view>
+        </view>
+  <!-- 주소, 상세주소 조회   -->      
+        <view class="padding-lr padding-bottom">
+          <view>우편번호 : {{item.zipcode}}</view>
+          <view>주소 : {{item.addr1}}</view>
+        </view>
+  <!-- 대표이미지 조회   -->
+        <view class="flex-sub padding-lr padding-bottom">
+          <view class="bg-img only-img" style="background-image:url({{item.firstimage2}});">
+            <view wx:if="{{!item.firstimage2}}" class="flex align-center justify-center bg-gray noImage">
+              <text class="cuIcon-picfill text-gray"></text>
+            </view>
+          </view>
+        </view>
+<!-- 콘텐츠개요 조회   -->  
+        <view class="padding-lr padding-bottom">
+          <view class="wxParse"><template is="wxParse" data="{{wxParseData:overview.nodes}}"/></view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+</block>
+
+<!-- 소개정보 view -->
+<block wx:if="{{TabCur==1}}">
+  <import src="detailIntro.wxml"/>
+  <!-- item : detailIntro.wxml에서 사용될 변수명 -->
+  <template is="{{tabArray[1].resArray[0].contenttypeid}}" data="{{item:tabArray[1].resArray[0]}}"/>
+</block>
+
+<!-- 추가이미지 view -->
+<block wx:if="{{TabCur==2}}">
+  <view class="cu-card" wx:if="{{tabArray[TabCur].resArray != ''}}">
+    <view class="cu-item bg-img" style="background-image:url({{item.smallimageurl}}); height: 400rpx" wx:for="{{tabArray[TabCur].resArray}}" wx:key="index">
+    </view>
+  </view>
+  <view wx:else class="padding-top-xl text-center text-shadow text-grey">
+    <text class="text-bold text-xxl">데이터가 없습니다.</text>
+  </view>
+</block>

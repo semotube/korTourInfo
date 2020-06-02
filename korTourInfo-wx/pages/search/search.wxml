@@ -1,0 +1,229 @@
+<!--search.wxml-->
+<wxs src="../../utils/script.wxs" module="script" />
+
+<!-- 상단 네비게이션바 부분 -->
+<view class="cu-custom" style="height:{{CustomBar}}px">
+  <view class="cu-bar fixed bg-green" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <view class="action">
+      <text class="">{{tabArray[TabCur].pageNo}} / {{tabArray[TabCur].pageTot}}</text>
+    </view>
+    <view class="content" style="top:{{StatusBar}}px">
+      <text class="">{{title[TabCur]}}</text>
+    </view>
+  </view>
+</view>
+
+<!-- Tab부분 -->
+<view class="fixed flex bg-gray" style="top:{{CustomBar}}px;">
+<!-- 조건버튼 -->
+  <view class="basis-xs flex align-center justify-center" bindtap="showModal" data-target="keyword">
+    <button class="cu-btn round bg-red shadow" disabled="{{TabCur==3}}">조건</button>
+  </view>
+<!-- tab   -->
+  <view class="basis-xl">
+    <scroll-view scroll-x class="bg-gray nav">
+      <view class="flex text-center">
+        <view class="cu-item flex-sub {{index==TabCur?'text-green cur':''}}" wx:for="{{tabArray}}" wx:key="index" bindtap="tabSelect" data-id="{{index}}">
+          {{tabArray[index].name}}
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+
+<!-- 통합검색 scroll-view -->
+<block wx:if="{{TabCur==0}}">
+  <scroll-view wx:if="{{tabArray[TabCur].resArray.length}}" scroll-y="{{modalName==null}}" class="page {{modalName!=null?'show':''}}">
+  
+    <view class="cu-list menu-avatar">
+      <view class="cu-item" wx:for="{{tabArray[TabCur].resArray}}" wx:key="index" bindtap="bindDetail" data-item="{{item}}">
+        <view class="cu-avatar radius lg" style="background-image:url({{item.firstimage2}});">
+          <text wx:if="{{!item.firstimage2}}" class="cuIcon-picfill lg text-gray"></text>
+        </view>
+        <view class="content">
+          <view>
+            <text class="text-cut">{{item.title}}</text>
+          </view>
+          <view class="text-gray text-sm flex">
+            <text class="cuIcon-phone text-grey margin-right-xs"></text> {{item.tel}}
+          </view>
+        </view>
+        <view class="action">
+          <view class="text-grey text-xs">{{script.toDate(item.modifiedtime)}}</view>
+          <view class="text-grey text-xs"><text class="cuIcon-attention margin-right-xs"></text>{{item.readcount}}</view>
+        </view>
+      </view>
+    </view>
+    
+  </scroll-view>
+  <view wx:else class="padding-top-xl text-center text-shadow text-grey">
+    <text class="text-bold text-xxl">통합검색 데이터가 없습니다.</text>
+  </view>
+</block>
+<!-- 행사검색 scroll-view -->
+<block wx:if="{{TabCur==1}}">
+  <scroll-view wx:if="{{tabArray[TabCur].resArray.length}}" scroll-y="{{modalName==null}}" class="page {{modalName!=null?'show':''}}">
+    <view class="cu-list menu-avatar">
+      <view class="cu-item" wx:for="{{tabArray[TabCur].resArray}}" wx:key="index" bindtap="bindDetail" data-item="{{item}}">
+        <view class="cu-avatar radius lg" style="background-image:url({{item.firstimage2}});">
+          <text wx:if="{{!item.firstimage2}}" class="cuIcon-picfill lg text-gray"></text>
+        </view>
+        <view class="content">
+          <view>
+            <text class="text-cut">{{item.title}}</text>
+          </view>
+          <view class="text-gray text-sm flex">
+            <text class="cuIcon-phone text-grey margin-right-xs"></text> {{item.tel}}
+          </view>
+        </view>
+        <view class="action">
+          <view class="text-grey text-xs">{{script.toDate(item.modifiedtime)}}</view>
+          <view class="text-grey text-xs"><text class="cuIcon-attention margin-right-xs"></text>{{item.readcount}}</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view wx:else class="padding-top-xl text-center text-shadow text-grey">
+    <text class="text-bold text-xxl">데이터가 없습니다.</text>
+  </view>
+</block>
+<!-- 숙박검색 scroll-view -->
+<block wx:if="{{TabCur==2}}">
+  <scroll-view wx:if="{{tabArray[TabCur].resArray.length}}" scroll-y="{{modalName==null}}" class="page {{modalName!=null?'show':''}}">
+    <view class="cu-list menu-avatar">
+      <view class="cu-item" wx:for="{{tabArray[TabCur].resArray}}" wx:key="index" bindtap="bindDetail" data-item="{{item}}">
+        <view class="cu-avatar radius lg" style="background-image:url({{item.firstimage2}});">
+          <text wx:if="{{!item.firstimage2}}" class="cuIcon-picfill lg text-gray"></text>
+        </view>
+        <view class="content">
+          <view>
+            <text class="text-cut">{{item.title}}</text>
+          </view>
+          <view class="text-gray text-sm flex">
+            <text class="cuIcon-phone text-grey margin-right-xs"></text> {{item.tel}}
+          </view>
+        </view>
+        <view class="action">
+          <view class="text-grey text-xs">{{script.toDate(item.modifiedtime)}}</view>
+          <view class="text-grey text-xs"><text class="cuIcon-attention margin-right-xs"></text>{{item.readcount}}</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view wx:else class="padding-top-xl text-center text-shadow text-grey">
+    <text class="text-bold text-xxl">데이터가 없습니다.</text>
+  </view>
+</block>
+<!-- 즐겨찾기 scroll-view -->
+<block wx:if="{{TabCur==3}}">
+  <scroll-view wx:if="{{tabArray[TabCur].resArray.length}}" scroll-y="{{modalName==null}}" class="page {{modalName!=null?'show':''}}">
+    <view class="cu-list menu-avatar">
+      <view class="cu-item" wx:for="{{tabArray[TabCur].resArray}}" wx:key="index" bindtap="bindDetail" data-item="{{item}}">
+        <view class="cu-avatar radius lg" style="background-image:url({{item.firstimage2}});">
+          <text wx:if="{{!item.firstimage2}}" class="cuIcon-picfill lg text-gray"></text>
+        </view>
+        <view class="content">
+          <view>
+            <text class="text-cut">{{item.title}}</text>
+          </view>
+          <view class="text-gray text-sm flex">
+            <text class="cuIcon-phone text-grey margin-right-xs"></text> {{item.tel}}
+          </view>
+        </view>
+        <view class="action">
+          <view class="text-grey text-xs">{{script.toDate(item.modifiedtime)}}</view>
+          <view class="text-grey text-xs"><text class="cuIcon-attention margin-right-xs"></text>{{item.readcount}}</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <view wx:else class="padding-top-xl text-center text-shadow text-grey">
+    <text class="text-bold text-xxl">데이터가 없습니다.</text>
+  </view>
+</block>
+
+
+<!-- modal -->
+<!-- ================================================================================================ -->
+<!-- 통합검색 , 행사검색, 숙박검색 modal -->
+<view class="cu-modal drawer-modal justify-end {{modalName=='keyword'?'show':''}}" bindtap="hideModal">
+  <view class="cu-dialog basis-90 text-right" catchtap style="top:{{CustomBar}}px;height:calc(100vh - {{CustomBar}}px)">
+    <form>
+
+      <view class="cu-form-group" hidden="{{tabArray[TabCur].contentArray == null}}">
+        <view class="title">타입</view>
+        <picker bindchange="contentChange" value="{{tabArray[TabCur].contentIndex}}" range-key="name" range="{{tabArray[TabCur].contentArray}}">
+          <view class="picker">
+          {{tabArray[TabCur].contentArray[tabArray[TabCur].contentIndex].name}}
+          </view>
+        </picker>
+      </view>
+
+      <view class="cu-form-group" hidden="{{tabArray[TabCur].categoryArray == null}}">
+        <view class="title">분류</view>
+        <picker mode="multiSelector" bindcolumnchange="categoryColumnChange" value="{{tabArray[TabCur].categoryIndex}}" range-key="name" range="{{tabArray[TabCur].categoryArray}}">
+          <view class="picker">
+            {{tabArray[TabCur].categoryArray[0][tabArray[TabCur].categoryIndex[0]].name}}，
+            {{tabArray[TabCur].categoryArray[1][tabArray[TabCur].categoryIndex[1]].name}},
+            {{tabArray[TabCur].categoryArray[2][tabArray[TabCur].categoryIndex[2]].name}}
+          </view>
+        </picker>
+      </view>
+
+      <view class="cu-form-group">
+        <view class="title">지역</view>
+        <picker mode="multiSelector" bindcolumnchange="areaColumnChange" value="{{tabArray[TabCur].areaIndex}}" range-key="name" range="{{tabArray[TabCur].areaArray}}">
+          <view class="picker">
+            {{tabArray[TabCur].areaArray[0][tabArray[TabCur].areaIndex[0]].name}}，
+            {{tabArray[TabCur].areaArray[1][tabArray[TabCur].areaIndex[1]].name}}
+          </view>
+        </picker>
+      </view>
+
+      <view class="cu-form-group" hidden="{{tabArray[TabCur].eventStartDate == null}}">
+        <view class="title">시작일</view>
+        <picker mode="date" value="{{tabArray[TabCur].eventStartDate}}" start="2000-01-01" end="2040-12-31" bindchange="eventStartDateChange">
+          <view class="picker">
+            {{tabArray[TabCur].eventStartDate}}
+          </view>
+        </picker>
+      </view>
+
+      <view class="cu-form-group" hidden="{{tabArray[TabCur].eventEndDate == null}}">
+        <view class="title">종료일</view>
+        <picker mode="date" value="{{tabArray[TabCur].eventEndDate}}" start="2000-01-01" end="2040-12-31" bindchange="eventEndDateChange">
+          <view class="picker">
+            {{tabArray[TabCur].eventEndDate}}
+          </view>
+        </picker>
+      </view>
+
+      <view class="cu-form-group" hidden="{{tabArray[TabCur].stayArray == null}}">
+        <view class="title">숙박선택</view>
+        <picker bindchange="stayChange" value="{{tabArray[TabCur].stayIndex}}" range-key="name" range="{{tabArray[TabCur].stayArray}}">
+          <view class="picker">
+          {{tabArray[TabCur].stayArray[tabArray[TabCur].stayIndex].name}}
+          </view>
+        </picker>
+      </view>     
+
+      <view class="cu-form-group" hidden="{{tabArray[TabCur].keyword == null}}">
+        <view class="title">검색어</view>
+        <input type="text" value="{{tabArray[0].keyword}}" bindinput="keywordChange" placeholder="두글자 이상 검색어를 입력해주세요"></input>
+      </view>
+
+      <view class="cu-form-group">
+        <view class="title">정렬</view>
+        <picker bindchange="arrangeChange" value="{{tabArray[TabCur].arrangeIndex}}" range-key="name" range="{{tabArray[TabCur].arrangeArray}}">
+          <view class="picker">
+          {{tabArray[TabCur].arrangeArray[tabArray[TabCur].arrangeIndex].name}}
+          </view>
+        </picker>
+      </view>
+
+    </form>
+    <view class="padding flex flex-direction">
+      <button class="cu-btn bg-red margin-tb-sm lg" bindtap="bindSearch">검색</button>
+    </view>
+  </view>
+</view>

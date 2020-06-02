@@ -1,0 +1,11 @@
+/* pages/searchStay/searchStay.wxss */
+.scrollBox {
+  width: 100%;
+  height: 200px;
+}
+
+.V-scroll-view{
+  padding: 10px;
+  width: 100%;
+  height: 400px;
+}

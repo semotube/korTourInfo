@@ -1,0 +1,12 @@
+/* pages/search/search.wxss */
+page {
+  padding-top: 100rpx;
+  background-color: white;
+}
+
+.fixed {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1024;
+}

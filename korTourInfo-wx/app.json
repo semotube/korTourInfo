@@ -1,0 +1,48 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/search/search",
+    "pages/search/detail/detail",
+    "pages/user/user",
+    "pages/user/code/code",
+    "pages/user/about/about",
+    "pages/user/bookmark/bookmark"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "backgroundColor": "#fafafa",
+    "borderStyle": "white",
+    "selectedColor": "#AB956D",
+    "color": "#666",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "resources/images/tabBar/home.png",
+        "selectedIconPath": "resources/images/tabBar/home@sel.png",
+        "text": "홈"
+      },
+      {
+        "pagePath": "pages/search/search",
+        "iconPath": "resources/images/tabBar/search.png",
+        "selectedIconPath": "resources/images/tabBar/search@sel.png",
+        "text": "검색"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "resources/images/tabBar/user.png",
+        "selectedIconPath": "resources/images/tabBar/user@sel.png",
+        "text": "나"
+      }
+    ]
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json"
+}

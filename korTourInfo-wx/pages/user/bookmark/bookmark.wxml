@@ -1,0 +1,5 @@
+<!--pages/user/bookmark/bookmark.wxml-->
+<cu-custom bgImage="http://tong.visitkorea.or.kr/cms/resource/72/1536672_image2_1.jpg" isBack="{{true}}">
+  <view slot="backText">뒤로</view>
+  <view slot="content">즐겨찾기</view>
+</cu-custom>

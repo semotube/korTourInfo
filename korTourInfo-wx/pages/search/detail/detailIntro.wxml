@@ -1,0 +1,552 @@
+<wxs    src="../../../utils/script.wxs" module="script" />
+<import src="../../../wxParse/wxParse.wxml" />
+
+<!-- contentTypeId=12(관광지) -->
+<template name="12">
+  <view class="padding-sm bg-white">
+  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">수용인원</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.accomcount.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">유모차대여</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.chkbabycarriage.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">신용카드가능</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.chkcreditcard.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">애완동물동반가능</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.chkpet.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">체험가능 연령</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.expagerange.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">체험안내</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.expguide.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">세계 문화유산</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.heritage1.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">세계 자연유산</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.heritage2.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">세계 기록유산</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.heritage3.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">개장일</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius">{{script.toDate(item.opendate.nodes[0].text)}}</view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">쉬는날</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.restdate.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">이용시기</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.useseason.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">이용시간</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.usetime.nodes}}"/></view>
+    </view>                                          
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">주차시설</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.parking.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">문의 및 안내</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.infocenter.nodes}}"/></view>
+    </view>
+  </view>
+</template>
+
+<!-- contentTypeId=14(문화시설) -->
+<template name="14">
+  <view class="padding-sm bg-white">
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">유모차대여</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.chkbabycarriageculture.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">신용카드가능</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.chkcreditcardculture.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">애완동물동반가능</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.chkpetculture.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">할인정보</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.discountinfo.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">주차시설</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.parkingculture.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">주차요금</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.parkingfee.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">쉬는날</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.restdateculture.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">이용요금</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.usefee.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">이용시간</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.usetimeculture.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">규모</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.scale.nodes}}"/></view>
+    </view>   
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">문의 및 안내</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.infocenterculture.nodes}}"/></view>
+    </view>  
+
+  </view>
+</template>
+
+<!-- contentTypeId=15(행사/공연/축제) -->
+<template name="15">
+  <view class="padding-sm bg-white">
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">관람 가능연령</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.agelimit.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">예매처</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.bookingplace.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">할인정보</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.discountinfofestival.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">행사 시작일</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius">{{script.toDate(item.eventstartdate.nodes[0].text)}}</view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">행사 종료일</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius">{{script.toDate(item.eventenddate.nodes[0].text)}}</view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">행사 홈페이지</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.eventhomepage.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">행사 장소</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.eventplace.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">축제등급</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.festivalgrade.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">행사장 위치안내</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.placeinfo.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">공연시간</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.playtime.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">관람 소요시간</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.spendtimefestival.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">행사 프로그램</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.program.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">주최자 정보</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.sponsor1.nodes}}"/></view>
+    </view>                                          
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">주최자 연락처</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.sponsor1tel.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">주관사 정보</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.sponsor2.nodes}}"/></view>
+    </view>                                          
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">주관사 연락처</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.sponsor2tel.nodes}}"/></view>
+    </view>      
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">부대행사</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.subevent.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">문의 및 안내</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.infocenter.nodes}}"/></view>
+    </view>
+  </view>
+</template>
+
+
+<!-- contentTypeId=25(여행코스) -->
+<template name="25">
+  <view class="padding-sm bg-white">
+    <view class="flex  p-xs margin-bottom-sm mb-sm">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">코스 테마</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.theme.nodes}}"/></view>
+    </view>
+    <view class="flex  p-xs margin-bottom-sm mb-sm">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">코스 일정</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.schedule.nodes}}"/></view>
+    </view>
+    <view class="flex  p-xs margin-bottom-sm mb-sm">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">코스 총 거리</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.distance.nodes}}"/></view>
+    </view>
+    <view class="flex  p-xs margin-bottom-sm mb-sm">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">코스 총 시간</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.taketime.nodes}}"/></view>
+    </view>
+    <view class="flex  p-xs margin-bottom-sm mb-sm">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">문의 및 안내</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.infocentertourcourse.nodes}}"/></view>
+    </view>  
+  </view>
+</template>
+
+<!-- contentTypeId=28(레포츠) -->
+<template name="28">
+  <view class="padding-sm bg-white">
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">수용인원</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.accomcountleports.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">유모차대여</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.chkbabycarriageleports.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">신용카드가능</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.chkcreditcardleports.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">애완동물동반가능</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.chkpetleports.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">체험 가능연령</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.expagerangeleports.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">개장기간</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.openperiod.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">주차요금</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.parkingfeeleports.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">주차시설</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.parkingleports.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">예약안내</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.reservation.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">쉬는날</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.restdateleports.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">규모</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.scaleleports.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">입장료</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.usefeeleports.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">이용시간</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.usetimeleports.nodes}}"/></view>
+    </view>                                          
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">문의 및 안내</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.infocenterleports.nodes}}"/></view>
+    </view>
+  </view>
+</template>
+
+
+<!-- contentTypeId=32(숙박) -->
+<template name="32">
+  <view class="padding-sm bg-white">
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">수용인원</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.accomcountlodging.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">베니키아</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.benikia.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">입실 시간</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.checkintime.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">퇴실 시간</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.checkouttime.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">객실내 취사</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.chkcooking.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">식음료장</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.foodplace.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">굿스테이</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.goodstay.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">한옥</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.hanok.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">주차시설</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.parkinglodging.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">픽업 서비스</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.pickup.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">객실수</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.roomcount.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">객실유형</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.roomtype.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">규모</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.scalelodging.nodes}}"/></view>
+    </view>      
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">부대시설</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.subfacility.nodes}}"/></view>
+    </view>      
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">바비큐장</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.barbecue.nodes}}"/></view>
+    </view>      
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">뷰티시설</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.beauty.nodes}}"/></view>
+    </view>      
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">식음료장</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.beverage.nodes}}"/></view>
+    </view>      
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">자전거 대여</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.bicycle.nodes}}"/></view>
+    </view>      
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">캠프파이어</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.campfire.nodes}}"/></view>
+    </view>      
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">휘트니스 센터</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.fitness.nodes}}"/></view>
+    </view>      
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">노래방</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.karaoke.nodes}}"/></view>
+    </view>      
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">공용 샤워실</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.publicbath.nodes}}"/></view>
+    </view>      
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">공용 PC실</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.publicpc.nodes}}"/></view>
+    </view>      
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">사우나실</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.sauna.nodes}}"/></view>
+    </view>      
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">세미나실</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.seminar.nodes}}"/></view>
+    </view>      
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">스포츠 시설</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.sports.nodes}}"/></view>
+    </view>      
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">환불규정</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.refundregulation.nodes}}"/></view>
+    </view>   
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">예약안내</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.reservationlodging.nodes}}"/></view>
+    </view>                                          
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">예약안내 홈페이지</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.reservationurl.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">문의 및 안내</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.infocenterlodging.nodes}}"/></view>
+    </view>
+  </view>
+</template>
+
+
+<!-- contentTypeId=38      (쇼핑) -->
+<template name="38">
+  <view class="padding-sm bg-white">
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">유모차대여</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.chkbabycarriageshopping.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">신용카드가능</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.chkcreditcardshopping.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">애완동물동반가능</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.chkpetshopping.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">문화센터 바로가기</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.culturecenter.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">장서는 날</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.fairday.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">개장일</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius">{{script.toDate(item.opendateshopping.nodes[0].text)}}</view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">영업시간</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.opentime.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">주차시설</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.parkingshopping.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">쉬는날</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.restdateshopping.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">화장실</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.restroom.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">판매 품목</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.saleitem.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">판매 품목별 가격</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.saleitemcost.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">규모</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.scaleshopping.nodes}}"/></view>
+    </view>    
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">매장안내</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.shopguide.nodes}}"/></view>
+    </view>                                                
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">문의 및 안내</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.infocentershopping.nodes}}"/></view>
+    </view>
+  </view>
+</template>
+
+
+<!-- contentTypeId=39(음식점) -->
+<template name="39">
+  <view class="padding-sm bg-white">
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">신용카드가능</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.chkcreditcardfood.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">할인정보</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.discountinfofood.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">어린이 놀이방</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.kidsfacility.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">개업일</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius">{{script.toDate(item.opendatefood.nodes[0].text)}}</view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">영업시간</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.opentimefood.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">포장 가능</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.packing.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">주차시설</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.parkingfood.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">쉬는날</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.restdatefood.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">규모</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.scalefood.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">좌석수</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.seat.nodes}}"/></view>
+    </view>  
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">금연/흡연</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.smoking.nodes}}"/></view>
+    </view>
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">대표 메뉴</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.firstmenu.nodes}}"/></view>
+    </view>    
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">취급 메뉴</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.treatmenu.nodes}}"/></view>
+    </view>    
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">인허가번호</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.lcnsno.nodes}}"/></view>
+    </view>       
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">예약안내</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.reservationfood.nodes}}"/></view>
+    </view>                                                
+    <view class="flex">
+      <view class="flex-sub bg-grey padding-sm margin-xs radius">문의 및 안내</view>
+      <view class="flex-treble bg-gray padding-sm margin-xs radius"><template is="wxParse" data="{{wxParseData:item.infocenterfood.nodes}}"/></view>
+    </view>
+  </view>
+</template>

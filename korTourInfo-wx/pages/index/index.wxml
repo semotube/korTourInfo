@@ -1,0 +1,54 @@
+<!--index.wxml-->
+<cu-custom bgColor="bg-gradual-pink">
+  <view slot="content">홈</view>
+</cu-custom>
+
+<!-- Hot Festival swiper -->
+<swiper class="screen-swiper round-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{festivalList_Hot}}" wx:key="index" bindtap="bindDetail" data-item="{{item}}">
+    <image src="{{item.firstimage}}" mode="scaleToFill"></image>
+  </swiper-item>
+</swiper>
+
+<!-- New Festival -->
+<view class="cu-bar bg-white margin-top solids-bottom">
+  <view class="action sub-title">
+    <text class="text-xl text-bold text-green">행사정보</text>
+    <text class="text-ABC text-green">Festival</text>
+  </view>
+  <view class='action'>
+    <text class="cuIcon-more"></text>
+  </view>
+</view>
+
+<view class="cu-list grid col-2">
+  <view class="cu-item" wx:for="{{festivalList_New}}" wx:key="index" bindtap="bindDetail" data-item="{{item}}">
+    <view class="bg-pink padding-xs radius text-center shadow-blur">
+      <image wx:if="{{item.firstimage2}}" src="{{item.firstimage2}}" mode="aspectFit" style="height:300rpx"></image>
+      <image wx:else src="/resources/images/error.png" mode="aspectFit" style="height:300rpx"></image>
+      <view class="text-cut margin-top-sm text-Abc">{{item.title}}</view>
+    </view>
+  </view>
+</view>
+
+
+<!-- New Stay -->
+<view class="cu-bar bg-white margin-top solids-bottom">
+  <view class="action sub-title">
+    <text class="text-xl text-bold text-green">숙박정보</text>
+    <text class="text-ABC text-green">STAY</text>
+  </view>
+  <view class='action'>
+    <text class="cuIcon-more"></text>
+  </view>
+</view>
+<view class="cu-list grid col-2">
+  <view class="cu-item" wx:for="{{stayList_New}}" wx:key="index" bindtap="bindDetail" data-item="{{item}}">
+    <view class="bg-pink padding-xs radius text-center shadow-blur">
+      <image wx:if="{{item.firstimage2}}" src="{{item.firstimage2}}" mode="aspectFit" style="height:300rpx"></image>
+      <image wx:else src="/resources/images/error.png" mode="aspectFit" style="height:300rpx"></image>
+      <view class="text-cut margin-top-sm text-Abc">{{item.title}}</view>
+    </view>
+  </view>
+</view>
+

@@ -1,0 +1,8 @@
+/**index.wxss**/
+.cu-list.grid>.cu-item {
+	position: relative;
+	display: flex;
+	padding: 20rpx;
+	transition-duration: 0s;
+	flex-direction: column
+}

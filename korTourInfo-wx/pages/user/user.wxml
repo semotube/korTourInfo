@@ -1,0 +1,53 @@
+<!--pages/user/user.wxml-->
+<!-- 상단 이미지, 로그인/아웃 후 기본정보 처리 -->
+<view class='fixed'>
+  <view class="bg-img bg-mask bg-img-style padding-tb-xl">
+    <view class="text-white margin-tl">
+      <view class="text-xxl">관광정보 앱</view>
+      <view class="margin-top">By : iDevKim</view>
+    </view>
+  </view>
+
+  <view class="cu-list menu-avatar shadow-warp">
+    <view class="cu-item">
+      <image class="cu-avatar round lg" src="{{userInfo.avatarUrl}}"></image>
+      <view class="content">
+        <button wx:if="{{!hasLogin}}" open-type="getUserInfo" bindgetuserinfo="logIn" class="cu-btn bg-white text-xxl">{{userInfo.nickName}}</button>
+        <block wx:else>
+          <view class="text-black text-sl">{{userInfo.nickName}}</view>
+          <view class="text-gray text-sm">주소 : {{userInfo.country +" "+ userInfo.province +" "+ userInfo.city}}</view>
+        </block>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+
+<!-- 사용될 메뉴처리 -->
+<view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
+  <view class="cu-item arrow">
+    <view class="content" bindtap="myFavor">
+      <text class="cuIcon-favorfill text-grey"></text>
+      <text class="text-grey">즐겨찾기</text>
+    </view>
+  </view>
+  <view class="cu-item arrow">
+    <navigator class="content" url="/pages/user/code/code" hover-class="none">
+      <text class="cuIcon-formfill text-grey"></text>
+      <text class="text-grey">코드관리</text>
+    </navigator>
+  </view>
+  <view class="cu-item arrow">
+    <navigator class="content" url="/pages/user/about/about" hover-class="none">
+      <text class="cuIcon-writefill text-grey"></text>
+      <text class="text-grey">앱 소개</text>
+    </navigator>
+  </view>
+  <view wx:if="{{hasLogin}}" class="cu-item arrow margin-top" bindtap="logOut">
+    <view class="content">
+      <text class="cuIcon-roundclosefill text-red"></text>
+      <text class="text-grey">로그아웃</text>
+    </view>
+  </view>
+</view>

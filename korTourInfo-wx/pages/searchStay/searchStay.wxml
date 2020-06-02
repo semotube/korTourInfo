@@ -1,0 +1,21 @@
+<!--pages/searchStay/searchStay.wxml-->
+<cu-custom bgColor="bg-gradual-pink" isBack="{{true}}">
+  <view slot="content">숙박정보조회</view>
+</cu-custom>
+
+<view class="container">
+  <button bindtap="reqStay">조회</button>
+
+  <scroll-view class="V-scroll-view" scroll-y="true">
+    <view wx:for="{{stayArray}}" wx:key="*this">
+      <text>{{item.title}}</text>
+      <text>{{" : "}}</text>
+      <text>{{item.tel}}</text>
+    </view>
+  </scroll-view>
+
+</view>
+
+
+  
+

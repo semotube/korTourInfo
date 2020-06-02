@@ -1,0 +1,81 @@
+<!--pages/user/code/code.wxml-->
+<cu-custom bgImage="http://tong.visitkorea.or.kr/cms/resource/72/1536672_image2_1.jpg" isBack="{{true}}">
+  <view slot="backText">뒤로</view>
+  <view slot="content">코드관리</view>
+</cu-custom>
+
+<view class="fixedPage">
+<!-- 상단 텍스트 처리 -->
+   <view class="cu-list menu card-menu margin-top">
+    <view class="cu-item">
+      <view class="content padding-tb-sm">
+        <view>
+          <text class="cuIcon-pulldown text-blue margin-right-xs"></text> 코드테이블 업데이트</view>
+        <view class="text-gray text-sm text-content margin-right-xs">
+          <text class="cuIcon-infofill margin-right-xs"></text> 서버의 코드테이블을 업데이트 합니다.</view>
+        <view class="text-gray text-sm text-content margin-right-xs">
+          <text class="cuIcon-infofill margin-right-xs"></text> 타입코드와 정렬코드는 코드상에 처리합니다.</view>
+        <view class="text-gray text-sm text-content margin-right-xs">
+          <text class="cuIcon-infofill margin-right-xs"></text> 분류코드와 지역코드는 서버에서 다운로드하여 처리합니다.</view>
+      </view>
+    </view>
+  </view>
+<!-- Picker 처리 -->
+  <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg">
+    <form>
+<!-- 타입 Picker -->
+      <view class="cu-form-group">
+        <view class="title">타입</view>
+        <picker bindchange="contentChange" value="{{contentIndex}}" range-key="name" range="{{contentArray}}">
+          <view class="picker">
+          {{contentArray[contentIndex].name}}
+          </view>
+        </picker>
+        <button class="cu-btn line-blue margin-left sm" bindtap="contentUpdate" disabled>업데이트</button>
+      </view>
+<!-- 분류 Picker -->      
+      <view class="cu-form-group">
+        <view class="title">분류</view>
+        <picker mode="multiSelector" bindcolumnchange="categoryColumnChange" value="{{categoryIndex}}" range-key="name" range="{{categoryArray}}">
+          <view class="picker">
+            <block wx:if="{{categoryArray[0].length}}">
+              {{categoryArray[0][categoryIndex[0]].name}},
+              {{categoryArray[1][categoryIndex[1]].name}},
+              {{categoryArray[2][categoryIndex[2]].name}}
+            </block>
+            <block wx:else>
+              <text class="text-red">업데이트가 필요합니다.</text>
+            </block>
+          </view>
+        </picker>
+        <button class="cu-btn bg-blue margin-left sm" bindtap="categoryUpdate">업데이트</button>
+      </view>
+<!-- 지역 Picker -->      
+      <view class="cu-form-group">
+        <view class="title">지역</view>
+        <picker mode="multiSelector" bindcolumnchange="areaColumnChange" value="{{areaIndex}}" range-key="name" range="{{areaArray}}">
+          <view class="picker">
+            <block wx:if="{{areaArray[0].length}}">
+              {{areaArray[0][areaIndex[0]].name}},
+              {{areaArray[1][areaIndex[1]].name}}
+            </block>
+            <block wx:else>
+              <text class="text-red">업데이트가 필요합니다.</text>
+            </block>
+          </view>
+        </picker>
+        <button class="cu-btn bg-blue margin-left sm" bindtap="areaUpdate">업데이트</button>
+      </view>
+<!-- 정렬 Picker -->      
+      <view class="cu-form-group">
+        <view class="title">정렬</view>
+        <picker bindchange="arrangeChange" value="{{arrangeIndex}}" range-key="name" range="{{arrangeArray}}">
+          <view class="picker">
+          {{arrangeArray[arrangeIndex].name}}
+          </view>
+        </picker>
+        <button class="cu-btn line-blue margin-left sm" bindtap="arrangeUpdate" disabled>업데이트</button>
+      </view>
+    </form>
+  </view>
+</view>

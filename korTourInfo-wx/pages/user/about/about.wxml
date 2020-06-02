@@ -1,0 +1,27 @@
+<!--pages/user/about/about.wxml-->
+<cu-custom bgImage="http://tong.visitkorea.or.kr/cms/resource/72/1536672_image2_1.jpg" isBack="{{true}}">
+  <view slot="backText">뒤로</view>
+  <view slot="content">소개</view>
+</cu-custom>
+
+<view class='margin-xl bg-white padding-xl radius shadow-lg'>
+  <view class='text-center margin-bottom text-lg  text-grey'>관광정보 앱</view>
+  <view class='text-content'>
+    <view>Ver : 1.0</view>
+    <view>UI 라이브러리 : ColorUI Ver 2.0</view>
+    <view>UI 다운로드 : github.com/weilanwl/ColorUI </view>
+    <view class='margin-top-sm'>""</view>
+    <view class='margin-top-sm'>""</view>
+    <view class='margin-top-sm'>""</view>
+    <view class='margin-top-sm'>""</view>
+    <view class='margin-top-sm'>""</view>
+    <view class='margin-top-sm'>""</view>
+    <view class='margin-top-sm'>""</view>                    
+    <view class='margin-top-sm'>""</view>        
+    <view class='margin-top-sm'>""</view>        
+    <view class='margin-top-sm'>""</view>        
+    <view class='margin-top-sm'>""</view>        
+    <view class='margin-top-sm'>""</view>            
+    <view class='margin-top-sm'>감사합니다.</view>
+  </view>
+</view>
